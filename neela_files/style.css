@@ -2725,7 +2725,7 @@ p.center {
 }
 
 .timeline::before {
-    content: "";
+    /* content: "";
     width: 1px;
     height: 100%;
     position: absolute;
@@ -2737,7 +2737,7 @@ p.center {
     -moz-transition: height .3s linear;
     -o-transition: height .3s linear;
     -webkit-transition: height .3s linear;
-    transition: height .3s linear
+    transition: height .3s linear */
 }
 
 .timeline::after {
@@ -2747,14 +2747,14 @@ p.center {
 }
 
 .timeline .year {
-    clear: both;
+    /* clear: both;
     padding: 7px 0;
     position: relative;
     z-index: 1;
     text-align: center;
     width: 100%;
     background-color: #fff;
-    margin-bottom: 70px
+    margin-bottom: 70px */
 }
 
 .timeline .year:first-child {
