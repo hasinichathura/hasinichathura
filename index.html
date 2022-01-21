@@ -336,27 +336,19 @@
 	<nav class="nav-mobile"><i class="fa fa-times"></i>
 		<h2>Menu</h2>
 		<ul>
-			<li><a href="./index.html#hero" class="active">Home</a></li>
-
-			<!-- <li class="dropdown">
-				<a href="./index.html#about-us" data-toggle="dropdown"
-					data-hover="dropdown" class="">About Us</a>
-				<ul class="dropdown-mobile">
-					<li><a href="./index.html#loveline" class="">Loveline</a></li>
-				</ul>
-			</li> -->
+			<li><a onclick="createurl('#hero')" class="active">Home</a></li>
 
 			<li class="dropdown">
-				<a href="./index.html#the-wedding" data-toggle="dropdown"
+				<a onclick="createurl('#the-wedding')" data-toggle="dropdown"
 					data-hover="dropdown" class="">The Wedding</a>
 				<ul class="dropdown-mobile">
-					<li><a href="./index.html#the-wedding" class="">Invite</a>
+					<li><a onclick="createurl('#the-wedding')" class="">Invite</a>
 					</li>
-					<li><a href="./index.html#location" class="">Location</a></li>
+					<li><a  onclick="createurl('#location')" class="">Location</a></li>
 				</ul>
 			</li>
 
-			<li><a href="./index.html#gallery" class="">Gallery</a></li>
+			<li><a onclick="createurl('#gallery')" class="">Gallery</a></li>
 		
 		</ul>
 	</nav>
@@ -390,14 +382,14 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-sm-12">
-									<a href="./index.html#hero"
+									<a href="" onclick="createurl('#home')"
 										class="nav-logo"><img src="./images/logo.png" alt="Chathura & Hasini"></a>
 
 									<!-- BEGIN MAIN MENU -->
 									<nav class="navbar">
 
 										<ul class="nav navbar-nav">
-											<li><a href="./index.html#hero"
+											<li><a href="" onclick="createurl('#home')"
 													class="active">Home</a></li>
 
 											<!-- <li class="dropdown">
@@ -411,18 +403,18 @@
 											</li> -->
 
 											<li class="dropdown">
-												<a href="./index.html#the-wedding"
+												<a onclick="createurl('#the-wedding')"
 													data-toggle="dropdown" data-hover="dropdown" class="">The Wedding<b
 														class="caret"></b></a>
 												<ul class="dropdown-menu">
-													<li><a href="./index.html#the-wedding"
+													<li><a  onclick="createurl('#the-wedding')"
 															class="">Invite</a></li>
-													<li><a href="./index.html#location"
+													<li><a onclick="createurl('#location')"
 															class="">Location</a></li>
 												</ul>
 											</li>
 
-											<li><a href="./index.html#gallery"
+											<li><a onclick="createurl('#gallery')"
 													class="">Gallery</a></li>
 										</ul>
 
@@ -441,8 +433,10 @@
 		<!-- END HEADER -->
 
 
+
+
 		<!-- BEGIN HERO SECTION -->
-		<section id="hero" class="bg-slideshow section-divider-bottom-1 zs-enabled overlay-plain"
+		<section id="home" class="bg-slideshow section-divider-bottom-1 zs-enabled overlay-plain"
 			style="min-height: 912px;">
 			<div class="zs-slideshow">
 				<div class="zs-slides">
@@ -1422,13 +1416,16 @@
 	
 	
 </body>
+
 <script>
 
 	var idx = document.URL.indexOf('?');
 	var params = {},
 			pairs = document.URL.split('?')
 					.pop()
-					.split('&');
+					.split('&')
+					.pop()
+					.split('#');
 	
 	for (var i = 0, p; i < pairs.length; i++) {
 		p = pairs[i].split('=');
@@ -1437,6 +1434,9 @@
 	
 	document.getElementById("inviteename").innerHTML = unescape(params["name"]);
 
+	function createurl(path){
+		window.location.hash=path ;
+	}
 	
 	</script>
 <script>
