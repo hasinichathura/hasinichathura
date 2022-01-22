@@ -1442,16 +1442,16 @@ At Senuri Grand Castello, Divulapitiya">
 
 	var idx = document.URL.indexOf('?');
 	var params = {},
-			pairs = document.URL.split('?')
+		pairs = document.URL.split('?')
 					.pop()
 					.split('&')
-					.pop()
-					.split('#');
 	
 	for (var i = 0, p; i < pairs.length; i++) {
 		p = pairs[i].split('=');
-		params[ p[0] ] =  p[1];
+		t = p[1].split('#');
+		params[ p[0] ] =  t[0];
 	}
+	
 	
 	document.getElementById("inviteename").innerHTML = unescape(params["name"]);
 

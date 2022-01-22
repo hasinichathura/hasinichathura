@@ -596,7 +596,7 @@ At Oak Ray Regency Hotel, Kandy">
 										
 										
 									
-									<div class="date"> <small>On</small>Thursday, 10th February 2022
+									<div class="date"> <small>On</small>10th February 2022
 										<small>from 10:30am Onwards</small>
 									
 									</div>
@@ -1115,15 +1115,14 @@ At Oak Ray Regency Hotel, Kandy">
 
 	var idx = document.URL.indexOf('?');
 	var params = {},
-			pairs = document.URL.split('?')
+		pairs = document.URL.split('?')
 					.pop()
 					.split('&')
-					.pop()
-					.split('#');
 	
 	for (var i = 0, p; i < pairs.length; i++) {
 		p = pairs[i].split('=');
-		params[ p[0] ] =  p[1];
+		t = p[1].split('#');
+		params[ p[0] ] =  t[0];
 	}
 	
 	document.getElementById("inviteename").innerHTML = unescape(params["name"]);
